@@ -15,7 +15,7 @@ days.forEach((day, index) => {
 
         // 클릭 이벤트 추가
         day.addEventListener('click', () => {
-            alert(`Day ${index + 1} - 사진이 열렸습니다!`);
+            alert(`1일차 선물~~✩`);
         });
     }
 });
