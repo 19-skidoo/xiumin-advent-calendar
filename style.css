@@ -18,6 +18,41 @@ h1 {
 }
 
 .day {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: white;
+    background-color: #ccc;
+    border-radius: 8px;
+    cursor: pointer;
+    opacity: 0.5;
+    overflow: hidden; /* 이미지를 박스 안에 고정 */
+}
+
+.day img {
+    max-width: 100%;
+    max-height: 100%;
+    position: absolute;
+    z-index: 1;
+    display: none; /* 기본적으로 숨김 처리 */
+}
+
+.day.unlocked img {
+    display: block; /* 잠금 해제 시 이미지 표시 */
+}
+
+.day span {
+    z-index: 2;
+    font-size: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+
+.day {
     background-color: #ccc;
     color: white;
     font-size: 24px;
