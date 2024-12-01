@@ -6,9 +6,16 @@ days.forEach((day, index) => {
     if (today >= unlockDate) {
         day.classList.remove('locked');
         day.classList.add('unlocked');
+
+        // 이미지 표시
+        const img = day.querySelector('.day-image');
+        if (img) {
+            img.classList.remove('hidden');
+        }
+
+        // 클릭 이벤트 추가
         day.addEventListener('click', () => {
-            alert(`Day ${index + 1} - 사진 보기!`);
+            alert(`Day ${index + 1} - 사진이 열렸습니다!`);
         });
     }
 });
-
