@@ -1,74 +1,96 @@
+/* 전체 배경 */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     text-align: center;
     background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    background-image: url('images/background-pattern.jpg'); /* 일본풍 패턴 */
+    background-size: cover;
+}
+
+/* 헤더 스타일 */
+.header {
+    padding: 20px;
+    background-color: #ffffff;
+    border-bottom: 4px solid #ff4500;
+    margin-bottom: 20px;
 }
 
 h1 {
-    margin-top: 20px;
+    margin: 0;
+    font-size: 36px;
     color: #ff4500;
+    font-weight: bold;
 }
 
+.subtitle {
+    font-size: 16px;
+    color: #333;
+    margin-top: 5px;
+}
+
+/* 캘린더 스타일 */
 .calendar {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 10px;
-    max-width: 600px;
-    margin: 20px auto;
+    grid-template-columns: repeat(7, 1fr); /* 7일씩 한 줄 */
+    gap: 5px;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 10px;
+    border: 5px solid #1e90ff; /* 파란 테두리 */
+    background-color: white;
+    border-radius: 10px;
 }
 
+/* 날짜 상자 스타일 */
 .day {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 24px;
+    background-color: #ff4500;
     color: white;
-    background-color: #ccc;
-    border-radius: 8px;
+    font-size: 20px;
+    padding: 15px;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     cursor: pointer;
-    opacity: 0.5;
-    overflow: hidden; /* 이미지를 박스 안에 고정 */
+    border: 2px solid #fff;
+    font-weight: bold;
 }
 
+/* 잠금 상태 */
+.day.locked {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+/* 잠금 해제 */
+.day.unlocked {
+    opacity: 1;
+    background-color: #ff6347; /* 잠금 해제 시 다른 빨강 */
+}
+
+/* 날짜 이미지 */
 .day img {
     max-width: 100%;
     max-height: 100%;
     position: absolute;
     z-index: 1;
-    display: none; /* 기본적으로 숨김 처리 */
-}
-
-.day.unlocked img {
-    display: block; /* 잠금 해제 시 이미지 표시 */
-}
-
-.day span {
-    z-index: 2;
-    font-size: 20px;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 5px 10px;
+    display: none;
     border-radius: 4px;
 }
 
-
-.day {
-    background-color: #ccc;
-    color: white;
-    font-size: 24px;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    opacity: 0.5;
+.day.unlocked img {
+    display: block;
 }
 
-.day.locked {
-    pointer-events: none;
+/* 날짜 숫자 */
+.day span {
+    z-index: 2;
+    font-size: 18px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 5px 8px;
+    border-radius: 4px;
 }
-
-.day.unlocked {
-    background-color: #ff4500;
-    opacity: 1;
-}
-
